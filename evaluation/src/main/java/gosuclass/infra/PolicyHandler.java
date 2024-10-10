@@ -22,5 +22,20 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ClassRegistered'"
+    )
+    public void wheneverClassRegistered_StartExam(
+        @Payload ClassRegistered classRegistered
+    ) {
+        ClassRegistered event = classRegistered;
+        System.out.println(
+            "\n\n##### listener StartExam : " + classRegistered + "\n\n"
+        );
+        // Sample Logic //
+
+    }
 }
 //>>> Clean Arch / Inbound Adaptor
