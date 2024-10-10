@@ -89,6 +89,30 @@ public class Registration {
         */
 
     }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void updateStatus(TimerEnded timerEnded) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Registration registration = new Registration();
+        repository().save(registration);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(timerEnded.get???()).ifPresent(registration->{
+            
+            registration // do something
+            repository().save(registration);
+
+
+         });
+        */
+
+    }
     //>>> Clean Arch / Port Method
 
 }

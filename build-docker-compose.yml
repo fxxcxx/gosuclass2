@@ -93,3 +93,17 @@ services:
       - ./recommend:/usr/src
       - ./maven-repo:/root/.m2
       
+  timer:
+    depends_on: 
+      - kafka
+    image: adoptopenjdk/maven-openjdk11:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    command: mvn spring-boot:run
+    ports:
+      - 8087:8087
+    working_dir: /usr/src
+    volumes:
+      - ./timer:/usr/src
+      - ./maven-repo:/root/.m2
+      

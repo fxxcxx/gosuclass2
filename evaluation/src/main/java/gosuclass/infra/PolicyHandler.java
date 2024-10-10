@@ -34,8 +34,9 @@ public class PolicyHandler {
         System.out.println(
             "\n\n##### listener StartExam : " + classRegistered + "\n\n"
         );
-        // Sample Logic //
 
+        // Sample Logic //
+        Evaluation.startExam(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor

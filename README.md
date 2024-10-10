@@ -25,6 +25,7 @@ See the README.md files inside the each microservices directory:
 - evaluation
 - history
 - recommend
+- timer
 
 
 ## Run API Gateway (Spring Gateway)
@@ -53,6 +54,10 @@ mvn spring-boot:run
 - recommend
 ```
  http :8088/recommends id="id" personId="personId" classId="classId" className="className" 
+```
+- timer
+```
+ http :8088/timers id="id" classId="classId" personId="personId" 
 ```
 
 
