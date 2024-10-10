@@ -94,6 +94,18 @@
                     </v-list-item>
 
 
+                    <v-list-item
+                        class="px-2"
+                        key="timers"
+                        to="/timers/timers"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Timer
+                    </v-list-item>
+
+
                 </v-list>
             </v-navigation-drawer>
         </div>
@@ -205,6 +217,13 @@ export default {
                 description: '', 
                 key: 'recommends', 
                 route: '/recommends/recommends',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Timer', 
+                description: '', 
+                key: 'timers', 
+                route: '/timers/timers',
                 ImageUrl: '',
             },
             

@@ -20,6 +20,9 @@ import HistoryHistoryDetail from "./components/listers/HistoryHistoryDetail"
 import RecommendRecommendManager from "./components/listers/RecommendRecommendCards"
 import RecommendRecommendDetail from "./components/listers/RecommendRecommendDetail"
 
+import TimerTimerManager from "./components/listers/TimerTimerCards"
+import TimerTimerDetail from "./components/listers/TimerTimerDetail"
+
 
 export default new Router({
     // mode: 'history',
@@ -78,6 +81,17 @@ export default new Router({
                 path: '/recommends/recommends/:id',
                 name: 'RecommendRecommendDetail',
                 component: RecommendRecommendDetail
+            },
+
+            {
+                path: '/timers/timers',
+                name: 'TimerTimerManager',
+                component: TimerTimerManager
+            },
+            {
+                path: '/timers/timers/:id',
+                name: 'TimerTimerDetail',
+                component: TimerTimerDetail
             },
 
 

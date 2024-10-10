@@ -54,5 +54,21 @@ public class PolicyHandler {
         // Sample Logic //
         Registration.updateStatus(event);
     }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='TimerEnded'"
+    )
+    public void wheneverTimerEnded_UpdateStatus(
+        @Payload TimerEnded timerEnded
+    ) {
+        TimerEnded event = timerEnded;
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + timerEnded + "\n\n"
+        );
+
+        // Sample Logic //
+        Registration.updateStatus(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

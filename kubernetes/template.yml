@@ -198,6 +198,46 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timer
+  labels:
+    app: timer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timer
+  template:
+    metadata:
+      labels:
+        app: timer
+    spec:
+      containers:
+        - name: timer
+          image: username/timer:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
 
 ---
 
@@ -282,4 +322,21 @@ spec:
       targetPort: 8080
   selector:
     app: recommend
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: timer
+  labels:
+    app: timer
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: timer
 

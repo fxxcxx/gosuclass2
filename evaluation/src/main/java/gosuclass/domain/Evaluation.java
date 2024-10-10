@@ -42,5 +42,30 @@ public class Evaluation {
         );
         return evaluationRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void startExam(ClassRegistered classRegistered) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Evaluation evaluation = new Evaluation();
+        repository().save(evaluation);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(classRegistered.get???()).ifPresent(evaluation->{
+            
+            evaluation // do something
+            repository().save(evaluation);
+
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root
