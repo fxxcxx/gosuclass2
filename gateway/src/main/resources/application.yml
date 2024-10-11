@@ -29,10 +29,10 @@ spring:
           uri: http://localhost:8086
           predicates:
             - Path=/recommends/**, 
-        - id: timer
+        - id: deadline
           uri: http://localhost:8087
           predicates:
-            - Path=/timers/**, 
+            - Path=/deadlines/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -77,10 +77,10 @@ spring:
           uri: http://recommend:8080
           predicates:
             - Path=/recommends/**, 
-        - id: timer
-          uri: http://timer:8080
+        - id: deadline
+          uri: http://deadline:8080
           predicates:
-            - Path=/timers/**, 
+            - Path=/deadlines/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

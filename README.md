@@ -25,7 +25,7 @@ See the README.md files inside the each microservices directory:
 - evaluation
 - history
 - recommend
-- timer
+- deadline
 
 
 ## Run API Gateway (Spring Gateway)
@@ -55,9 +55,9 @@ mvn spring-boot:run
 ```
  http :8088/recommends id="id" personId="personId" classId="classId" className="className" 
 ```
-- timer
+- deadline
 ```
- http :8088/timers id="id" classId="classId" personId="personId" 
+ http :8088/deadlines id="id" classId="classId" personId="personId" 
 ```
 
 

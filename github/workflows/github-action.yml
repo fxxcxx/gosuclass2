@@ -34,7 +34,7 @@ jobs:
           mvn clean package -f ./evaluation/pom.xml
           mvn clean package -f ./history/pom.xml
           mvn clean package -f ./recommend/pom.xml
-          mvn clean package -f ./timer/pom.xml
+          mvn clean package -f ./deadline/pom.xml
 
       - name: Docker Build and push for Registration
         uses: docker/build-push-action@v4
@@ -86,13 +86,13 @@ jobs:
             ghcr.io/${{ github.repository }}/recommend:latest
             ghcr.io/${{ github.repository }}/recommend:${{ github.ref_name }}
             
-      - name: Docker Build and push for Timer
+      - name: Docker Build and push for Deadline
         uses: docker/build-push-action@v4
         with:
-          context: ./timer
+          context: ./deadline
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/timer:latest
-            ghcr.io/${{ github.repository }}/timer:${{ github.ref_name }}
+            ghcr.io/${{ github.repository }}/deadline:latest
+            ghcr.io/${{ github.repository }}/deadline:${{ github.ref_name }}
             

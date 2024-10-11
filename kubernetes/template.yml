@@ -203,22 +203,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: timer
+  name: deadline
   labels:
-    app: timer
+    app: deadline
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: timer
+      app: deadline
   template:
     metadata:
       labels:
-        app: timer
+        app: deadline
     spec:
       containers:
-        - name: timer
-          image: username/timer:latest
+        - name: deadline
+          image: username/deadline:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -330,13 +330,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: timer
+  name: deadline
   labels:
-    app: timer
+    app: deadline
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: timer
+    app: deadline
 
