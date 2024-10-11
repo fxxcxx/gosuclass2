@@ -20,8 +20,8 @@ import HistoryHistoryDetail from "./components/listers/HistoryHistoryDetail"
 import RecommendRecommendManager from "./components/listers/RecommendRecommendCards"
 import RecommendRecommendDetail from "./components/listers/RecommendRecommendDetail"
 
-import TimerTimerManager from "./components/listers/TimerTimerCards"
-import TimerTimerDetail from "./components/listers/TimerTimerDetail"
+import DeadlineDeadlineManager from "./components/listers/DeadlineDeadlineCards"
+import DeadlineDeadlineDetail from "./components/listers/DeadlineDeadlineDetail"
 
 
 export default new Router({
@@ -84,14 +84,14 @@ export default new Router({
             },
 
             {
-                path: '/timers/timers',
-                name: 'TimerTimerManager',
-                component: TimerTimerManager
+                path: '/deadlines/deadlines',
+                name: 'DeadlineDeadlineManager',
+                component: DeadlineDeadlineManager
             },
             {
-                path: '/timers/timers/:id',
-                name: 'TimerTimerDetail',
-                component: TimerTimerDetail
+                path: '/deadlines/deadlines/:id',
+                name: 'DeadlineDeadlineDetail',
+                component: DeadlineDeadlineDetail
             },
 
 

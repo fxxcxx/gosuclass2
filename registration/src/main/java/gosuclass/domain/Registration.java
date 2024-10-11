@@ -92,7 +92,7 @@ public class Registration {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void updateStatus(TimerEnded timerEnded) {
+    public static void reject(DeadlineReached deadlineReached) {
         //implement business logic here:
 
         /** Example 1:  new item 
@@ -103,7 +103,7 @@ public class Registration {
 
         /** Example 2:  finding and process
         
-        repository().findById(timerEnded.get???()).ifPresent(registration->{
+        repository().findById(deadlineReached.get???()).ifPresent(registration->{
             
             registration // do something
             repository().save(registration);

@@ -93,7 +93,7 @@ services:
       - ./recommend:/usr/src
       - ./maven-repo:/root/.m2
       
-  timer:
+  deadline:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -104,6 +104,6 @@ services:
       - 8087:8087
     working_dir: /usr/src
     volumes:
-      - ./timer:/usr/src
+      - ./deadline:/usr/src
       - ./maven-repo:/root/.m2
       

@@ -96,13 +96,13 @@
 
                     <v-list-item
                         class="px-2"
-                        key="timers"
-                        to="/timers/timers"
+                        key="deadlines"
+                        to="/deadlines/deadlines"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
                     >
-                        Timer
+                        Deadline
                     </v-list-item>
 
 
@@ -220,10 +220,10 @@ export default {
                 ImageUrl: '',
             },
             { 
-                title: 'Timer', 
+                title: 'Deadline', 
                 description: '', 
-                key: 'timers', 
-                route: '/timers/timers',
+                key: 'deadlines', 
+                route: '/deadlines/deadlines',
                 ImageUrl: '',
             },
             
